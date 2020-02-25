@@ -6,8 +6,8 @@ LearnPython: Домашнее задание №2
 
 Рекомендуемый порядок выполнения заданий:
 
-* date_and_time.py
-* files.py
+* date_and_time.py Done
+* files.py Done
 * dict_to_csv.py
 
 Для выполнения заданий вы можете скопировать шаблоны в свой проект, либо
