@@ -12,11 +12,20 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+
+    str1 = ''
+    num_of_words = 0
+    with open('.\\referat.txt','r', encoding='utf-8') as fi, open('.\\referat2.txt','w', encoding='utf-8') as fo:
+        for line in fi:
+            a = line.rstrip() + ('\n')
+            str1 += a
+            num_of_words += len(a.split())
+            a = a.replace('.', '!')
+            fo.write(a)
+    print('Длина файла, как одной строки :', len(str1))
+    print('Количество слов в файле : ', num_of_words)
+
+
 
 if __name__ == "__main__":
     main()
