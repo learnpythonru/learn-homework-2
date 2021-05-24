@@ -16,7 +16,21 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    f = open(r"/Users/filatov1-av/Downloads/referat.txt", "r")
+    data = f.read()
+    print(f"длина строки:",len(data))
+    print(f"слов в строке:", len(data.split()))
+    new_data = ''
+    for x in data:
+        if x != ".":
+            new_data += x
+        else:
+            new_data += "!"
+    print(new_data)
+    newf = open("/Users/filatov1-av/Downloads/referat2.txt", "w+")
+    newf.write(new_data)
+    f.close()
+    newf.close()
 
 if __name__ == "__main__":
     main()
