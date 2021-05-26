@@ -7,7 +7,8 @@
 2. Превратите строку "01/01/20 12:10:03.234567" в объект datetime
 
 """
-import datetime
+import datetime, logging
+logging.basicConfig(level=logging.INFO)
 
 def print_days():
     dt_now = datetime.datetime.now()
@@ -21,7 +22,7 @@ def print_days():
 
 def str_2_datetime(date_string):
     datetime_obj = datetime.datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
-    print(f'INFO: {datetime_obj=}   |   type: ', type(datetime_obj))
+    logging.info(f'{datetime_obj=}   |   type: {type(datetime_obj)}')
     return datetime_obj
 
 if __name__ == "__main__":
