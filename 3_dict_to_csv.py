@@ -11,11 +11,29 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    import csv
+    csv_columns = ['Name', 'Age', 'Job']
+    dict_data = [
+        {'Name': 'Dasha', 'Age': '26', 'Job': 'Scientist'},
+        {'Name': 'Masha', 'Age': '27', 'Job': 'Painter'},
+        {'Name': 'Pasha', 'Age': '28', 'Job': 'Sales manager'},
+        {'Name': 'Sasha', 'Age': '29', 'Job': 'Teacher'},
+        {'Name': 'Misha', 'Age': '30', 'Job': 'Gardener'},
+    ]
+
+    csv_file = "my_dictionary.csv"
+
+    try:
+        with open(csv_file, 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=csv_columns, delimiter=';')
+            writer.writeheader()
+            for data in dict_data:
+                writer.writerow(data)
+    except IOError:
+        print("I/O error")
 
 if __name__ == "__main__":
     main()
+
+
+
