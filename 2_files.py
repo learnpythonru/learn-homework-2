@@ -17,13 +17,10 @@
 def main():
     with open(r'referat.txt', 'r', encoding='utf-8') as f:
         for line in f:
-            lines_count = 0
             line_len = len(line)
-            lines_count += line_len
             with open(r'referat2.txt', 'a', encoding='utf-8') as ref2:
-                ref2.write(f'Длина строки: {line} равна: {lines_count}')
+                ref2.write(f'Длина строки: {line} равна: {line_len}')
                 ref2.write('\n')
-            lines_count = 0
 
     with open(r'referat.txt', 'r', encoding='utf-8') as f:
         for line in f:
@@ -33,7 +30,6 @@ def main():
             with open(r'referat2.txt', 'a', encoding='utf-8') as ref3:
                 ref3.write(f'Количество слов в строке: {words}')
                 ref3.write('\n')
-            words = 0
 
     with open(r'referat.txt', 'r', encoding='utf-8') as f:
         for line in f:

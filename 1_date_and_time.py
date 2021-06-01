@@ -12,10 +12,10 @@ from datetime import datetime, timedelta
 
 def print_days():
     dt_now = datetime.now()
-    delta = timedelta(days=1)
-    delta_m = timedelta(days=30)
-    dt_yesterday = dt_now - delta
-    dt_month = dt_now - delta_m 
+    one_day = timedelta(days=1)
+    delta_month = timedelta(days=30)
+    dt_yesterday = dt_now - one_day
+    dt_month = dt_now - delta_month 
     print(f'Вчера: {dt_yesterday}', f'сегодня: {dt_now}', f'30 дней назад: {dt_month}', sep='\n')
 
 

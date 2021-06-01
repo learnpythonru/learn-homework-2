@@ -12,7 +12,7 @@
 
 import csv
 
-my_dict =    [
+workers =    [
         {'name': 'Маша', 'age': 25, 'job': 'Scientist'}, 
         {'name': 'Вася', 'age': 8, 'job': 'Programmer'}, 
         {'name': 'Эдуард', 'age': 48, 'job': 'Big boss'},
@@ -25,7 +25,7 @@ def main():
         writer = csv.DictWriter(ex, fields, delimiter=';')
         writer.writeheader()
 
-        for users in my_dict:
+        for users in workers:
             writer.writerow(users)
 
 if __name__ == "__main__":
