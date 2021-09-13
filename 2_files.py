@@ -20,7 +20,7 @@ def main():
     with open(r'referat.txt', encoding='utf-8') as f:
         content = f.read()
         string_len = (len(content))
-        words_count = content.split()
+        words_count = len((content.split()))
         sign_replace = content.replace('.', '!')
 
     with open('referat2.txt', 'w', encoding='utf-8') as f:
