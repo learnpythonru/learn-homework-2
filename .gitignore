@@ -121,8 +121,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-referat.txt
-referat2.txt
-some.csv
+
 # idea
 .idea/
