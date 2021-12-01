@@ -12,11 +12,17 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    
+    with open('referat.txt', 'r', encoding='utf-8') as file:
+        text = file.read()
+        length = len(text)
+        number_of_words = len(text.split())
+        text_with_exclamation_marks = text.replace('.', '!')
+
+    with open('referat2.txt', 'w', encoding='utf-8') as new_file:
+        new_file.write(f'Длина всей строки: {length}\n')
+        new_file.write(f'Количество слов в тексте: {number_of_words}\n\n')
+        new_file.write(text_with_exclamation_marks)
 
 if __name__ == "__main__":
     main()
