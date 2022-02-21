@@ -1,3 +1,10 @@
+*.idea
+*.mypy_cache
+*.vscode
+referat.txt
+referat2.txt
+peoples_info.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
