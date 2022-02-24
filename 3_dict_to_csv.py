@@ -10,12 +10,27 @@
 
 """
 
+from asyncore import write
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    import csv
+
+    user_list = [
+            {'name': 'Маша', 'age': 25, 'job': 'Scientist'}, 
+            {'name': 'Вася', 'age': 8, 'job': 'Programmer'}, 
+            {'name': 'Эдуард', 'age': 48, 'job': 'Big boss'},
+            {'name': 'Коля', 'age': 37, 'job': 'Engineer'},
+        ]
+    
+    with open ('users.csv', 'w', encoding='utf-8') as f:
+        field = ['name', 'age', 'job']
+        writer = csv.DictWriter(f, field, delimiter=';')
+        writer.writeheader()
+
+        for user in user_list:
+            writer.writerow(user)
+
 
 if __name__ == "__main__":
     main()
