@@ -11,12 +11,24 @@
 5. Сохраните результат в файл referat2.txt
 """
 
+import re
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    with open('referat.txt', 'r', encoding = 'utf-8') as referat:
+        
+        for string in referat:
+            print(len(string.split()))             #Прочитайте содержимое файла в перменную, подсчитайте длинну получившейся строки
+            string = string.replace('.', '!')      #Замените точки в тексте на восклицательные знаки
+            print(string)
+        
+    with open('referat.txt', 'r', encoding = 'utf-8') as referat:
+        total = referat.read()
+        total = total.replace('.', '!')
+        print(len(total.split()))                  #Подсчитайте количество слов в тексте
+
+    with open('referat2.txt', 'w', encoding = 'utf-8') as new:
+        a = new.write(total)   
 
 if __name__ == "__main__":
     main()
