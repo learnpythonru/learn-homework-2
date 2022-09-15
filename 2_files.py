@@ -11,12 +11,20 @@
 5. Сохраните результат в файл referat2.txt
 """
 
+from multiprocessing import context
+
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    with open('referat.txt', 'r', encoding='utf-8') as f:
+         content = f.read()
+         print(content.split())
+         print(f'Длина строки – {len(content)}. \nВ тексте {len(content.split())} слов(а).')
+    with open('referat2.txt', 'w', encoding='utf-8') as f2:
+        f2.write(content.replace(".", "!"))
 
 if __name__ == "__main__":
     main()
