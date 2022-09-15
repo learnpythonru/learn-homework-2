@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+referat2.txt
+characters.csv
+
 # C extensions
 *.so
 
