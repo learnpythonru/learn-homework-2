@@ -9,13 +9,28 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
+from asyncore import write
+import csv
+
 
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    user_list = [
+        {"name": "Adil", "age": "27", "job": "Engeneer"},
+        {"name": "Adel", "age": "26", "job": "Devrel"},
+        {"name": "Regina", "age": "25", "job": "HR-manager"},
+        {"name": "Alex", "age": "41", "job": "Head of Departament"},
+    ]
+    with open("export.csv", "w", encoding="utf-8", newline="") as f:
+        fields = ["name", "age", "job"]
+        writer = csv.DictWriter(f, fields, delimiter=";")
+        writer.writeheader()
+        for user in user_list:
+            writer.writerow(user)
+
 
 if __name__ == "__main__":
     main()
