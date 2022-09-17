@@ -9,7 +9,6 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
-from asyncore import write
 import csv
 
 
@@ -19,7 +18,7 @@ def main():
     В ней надо заменить pass на ваш код
     """
     user_list = [
-        {"name": "Adil", "age": "27", "job": "Engeneer"},
+        {"name": "Adil", "age": "27", "job": "Engineer"},
         {"name": "Adel", "age": "26", "job": "Devrel"},
         {"name": "Regina", "age": "25", "job": "HR-manager"},
         {"name": "Alex", "age": "41", "job": "Head of Departament"},
