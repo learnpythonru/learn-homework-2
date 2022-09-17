@@ -11,12 +11,17 @@
 5. Сохраните результат в файл referat2.txt
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def main(): 
+    with open('referat.txt', 'r', encoding='utf-8') as f:  
+        text = f.read()
+        get_text = len(text)
+        words = len(text.split())
+        get_word = text.replace('.', '!')
+        print(text, get_text, words, get_word)
+
+        with open('referat2.txt', 'w', encoding='utf-8') as new_f: 
+            new_f.write(text)
+
 
 if __name__ == "__main__":
     main()
