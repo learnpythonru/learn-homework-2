@@ -11,33 +11,23 @@
 from datetime import datetime, timedelta
 
 
-def get_date(count_day=0):
+def formatted_date_shifted_on(count_day=0):
 
-    return datetime.strftime(datetime.now() + count_day * timedelta(days=1), "%d.%m.%Y")
+    return datetime.strftime(datetime.now() + timedelta(days=count_day), "%d.%m.%Y")
 
 
 def print_days():
-
     print(
-        f"Вчера: {get_date(-1)}, \nСегодня: {get_date()},\n30дней назад: {get_date(-30)}"
-    )
+        f"Вчера: {formatted_date_shifted_on(-1)},")
+    print(f"Сегодня: {formatted_date_shifted_on()},")
+    print(f"30дней назад: {formatted_date_shifted_on(-30)}")
 
 
 def str_2_datetime(date_string):
-    date_string = date_string.replace("/", " ").replace(":", " ")
-    date_string = date_string.replace(".", " ")
-    date_string = date_string.split()
-    for element in range(len(date_string)):
-        date_string[element] = int(date_string[element])
-    date_time = datetime(
-        date_string[2],
-        date_string[1],
-        date_string[0],
-        date_string[3],
-        date_string[4],
-        date_string[5],
-    )
-    return date_time.strftime("%d.%m.%Y %H:%M:%S")
+
+    time = datetime.strptime(date_string, "%d/%m/%y %H:%M:%S.%f")
+    
+    return time
 
 
 if __name__ == "__main__":

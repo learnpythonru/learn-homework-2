@@ -11,15 +11,21 @@
 5. Сохраните результат в файл referat2.txt
 """
 
+def word_count(text):
+    return len(text.split())
+
+def len_text(text):
+    return len(text)
+
 
 def main():
     with open("referat.txt", "r", encoding="utf-8") as file1:
         context = file1.read()
-        print(len(context))
-        print(len(context.split()))
-        context = context.replace(".", "!")
-        with open("referat2.txt", "w", encoding="utf-8") as file2:
-            file2.write(context)
+    print(len_text(context))
+    print(word_count(context))
+    context = context.replace(".", "!")
+    with open("referat2.txt", "w", encoding="utf-8") as file2:
+        file2.write(context)
 
 
 if __name__ == "__main__":
