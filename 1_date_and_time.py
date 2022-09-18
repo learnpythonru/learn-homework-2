@@ -8,20 +8,27 @@
 
 """
 
+from datetime import datetime, timedelta
+
+
+def formatted_date_shifted_on(count_day=0):
+
+    return datetime.strftime(datetime.now() + timedelta(days=count_day), "%d.%m.%Y")
+
+
 def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    print(
+        f"Вчера: {formatted_date_shifted_on(-1)},")
+    print(f"Сегодня: {formatted_date_shifted_on()},")
+    print(f"30дней назад: {formatted_date_shifted_on(-30)}")
 
 
 def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+
+    time = datetime.strptime(date_string, "%d/%m/%y %H:%M:%S.%f")
+    
+    return time
+
 
 if __name__ == "__main__":
     print_days()
