@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, date
 """
 Домашнее задание №2
 
@@ -8,20 +9,16 @@
 
 """
 
-def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def print_days() -> str:
+    dt_today = datetime.now().strftime("%d.%m.%Y")    
+    dt_yesterday = (datetime.now() - timedelta(days=1)).strftime("%d.%m.%Y")
+    dt_30_days_before = dt_yesterday = (datetime.now() - timedelta(days=30)).strftime("%d.%m.%Y")
+    print(f"Вчера: {dt_yesterday}, сегодня: {dt_today}, 30 дней назад: {dt_30_days_before}")
 
 
-def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def str_2_datetime(date_string: str) -> datetime:
+    date_dt = datetime.strptime(date_string, "%m/%d/%y %H:%M:%S.%f")
+    return date_dt
 
 if __name__ == "__main__":
     print_days()
