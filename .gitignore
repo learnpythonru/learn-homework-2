@@ -122,3 +122,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /hw2venv/
+/.idea/
+/hw2.csv
+/referat.txt
+/referat2.txt
+/learn-homework-2.iml
+/config.py
+/users/
+/cities_original.csv
