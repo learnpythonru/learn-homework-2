@@ -18,15 +18,13 @@ def main():
     """
     with open('referat.txt', 'r', encoding='utf-8') as f:
         context = f.read()
-    read_file = context
-    number_of_words = len(read_file.split())
+    number_of_words = len(context.split())
     print(f'Количество слов составляет - {number_of_words}')
 
-    replace_example = read_file.replace('.', '!')
+    replace_example = context.replace('.', '!')
     print(replace_example)
     with open('referat.txt', 'w', encoding='utf-8') as new_f:
         new_f.write(replace_example)
-    new_f.close()
 
 
 if __name__ == "__main__":
