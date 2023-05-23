@@ -24,7 +24,7 @@ def main():
 
     replace_example = context.replace('.', '!')
     print(replace_example)
-    with open('referat.txt', 'w', encoding='utf-8') as new_f:
+    with open('referat1.txt', 'w', encoding='utf-8') as new_f:
         new_f.write(replace_example)
 
 
