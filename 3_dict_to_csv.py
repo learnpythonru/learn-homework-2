@@ -9,13 +9,25 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
+import csv
+
+test_animals_dict = [
+        {'name': 'Alex', 'age': '10', 'job': 'Lion'},
+        {'name': 'Melman', 'age': '10', 'job': 'Giraffe'},
+        {'name': 'Gloria', 'age': '10', 'job': 'Hippo'},
+        {'name': 'Marty', 'age': '10', 'job': 'Zebra'},
+    ]
+
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+
+    with open('export.csv', 'w') as f:
+        fields = ['name', 'age', 'job']
+        writer = csv.DictWriter(f, fields, delimiter=';')
+        writer.writeheader()
+        for animal in test_animals_dict:
+            writer.writerow(animal)
+
 
 if __name__ == "__main__":
     main()
