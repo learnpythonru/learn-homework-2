@@ -18,6 +18,7 @@ def main():
     """
     with open('referat.txt', 'r', encoding='utf-8') as f:
         context = f.read()
+        print(len(context))
     number_of_words = len(context.split())
     print(f'Количество слов составляет - {number_of_words}')
 
