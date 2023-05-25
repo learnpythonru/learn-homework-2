@@ -9,13 +9,27 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
+import csv
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+from names_and_jobs import names, jobs
+import random
+
+people = [
+    {
+        'name': random.choice(names),
+        'age': random.randint(18, 55),
+        'job': random.choice(jobs)
+    } for _ in range(random.randint(4, 20))
+]
+
+
+def main(list_of_dicts):
+    with open('export.csv', 'w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, list(list_of_dicts[0].keys()))
+        writer.writeheader()
+        for elem in list_of_dicts:
+            writer.writerow(elem)
+
 
 if __name__ == "__main__":
-    main()
+    main(people)
