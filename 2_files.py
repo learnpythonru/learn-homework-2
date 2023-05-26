@@ -1,22 +1,14 @@
-"""
-Домашнее задание №2
-
-Работа с файлами
-
-
-1. Скачайте файл по ссылке https://www.dropbox.com/s/sipsmqpw1gwzd37/referat.txt?dl=0
-2. Прочитайте содержимое файла в перменную, подсчитайте длинну получившейся строки
-3. Подсчитайте количество слов в тексте
-4. Замените точки в тексте на восклицательные знаки
-5. Сохраните результат в файл referat2.txt
-"""
-
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    with open('referat.txt', 'r', encoding='utf-8') as referat:
+        original_text = referat.read()  # Прочитайте содержимое файла в переменную
+    referat.close()
+    print(f'Знаков: {len(original_text)}')   # Подсчитайте длину получившейся строки
+    print(f'Слов: {len(original_text.split())}')   # Подсчитайте количество слов в тексте
+    new_text = original_text.replace('.', '!')  # Замените точки в тексте на восклицательные знаки
+    with open('referat2.txt', 'w', encoding='utf-8') as referat2:
+        referat2.write(new_text)    # Сохраните результат в файл referat2.txt
+    referat2.close()
+
 
 if __name__ == "__main__":
     main()
