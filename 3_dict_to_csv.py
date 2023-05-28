@@ -8,13 +8,13 @@ def main():
         {'name' : 'Harry', 'age' : 42, 'job' : 'Wizard'},
         {'name' : 'Diana', 'age' : 61, 'job' : 'Princess'},
     ]
-    with open('candidates.csv', 'w', encoding='utf-8', newline='') as candidates:
-        columns = ['name', 'age', 'job']
-        writer = csv.DictWriter(candidates, columns, delimiter=';')
+    filename = 'candidates.csv'
+    columns = ['name', 'age', 'job']
+    with open(filename, 'w', encoding='utf-8', newline='') as file_handler:
+        writer = csv.DictWriter(file_handler, columns, delimiter=';')
         writer.writeheader()
         for candidate_cv in table_for_csv:
             writer.writerow(candidate_cv)
-    candidates.close()
 
 
 if __name__ == "__main__":
