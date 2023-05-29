@@ -123,6 +123,5 @@ dmypy.json
 .pyre/
 
 # Specific data
-candidates.csv
-referat.txt
-referat2.txt
+*.csv
+*.txt
