@@ -2,20 +2,26 @@
 
 Домашнее задание №2
 
-Работа csv
-
-1. Создайте список словарей с ключами name, age и job и значениями по вашему выбору. 
-   В списке нужно создать не менее 4-х словарей
-2. Запишите содержимое списка словарей в файл в формате csv
 
 """
 
+import csv
+
+people_list = [
+    {"name": "Mark", "age": 21, "job": "lawyer"},
+    {"name": "Anne", "age": 35, "job": "sailor"},
+    {"name": "Peter", "age": 39, "job": "web-designer"},
+    {"name": "Lada", "age": 18, "job": "personal manager"},
+    {"name": "Misha", "age": 25, "job": "economist"}
+]
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    with open("people.csv", "w", encoding="utf-8") as output_file:
+        fields = ["name", "age", "job"]
+        writer = csv.DictWriter(output_file, fields, delimiter=";")
+        writer.writeheader()
+        for person in people_list:
+            writer.writerow(person)
 
 if __name__ == "__main__":
     main()
