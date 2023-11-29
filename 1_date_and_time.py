@@ -22,8 +22,8 @@ def print_days() -> None:
     print(dt_now - delta_30)
 
 
-def str_2_datetime(date_string) -> any:
-    # date_string = "01/01/20 12:10:03.234567"
+def str_2_datetime(date_string)-> datetime:
+
     format = "%d/%m/%y %H:%M:%S.%f"
     datetime_obj = datetime.datetime.strptime(date_string, format)
     return datetime_obj

@@ -33,7 +33,7 @@ my_dict = [{'name': 'Aleks',
            ]
 
 
-def main():
+def main()->None:
     with open('my_base.txt', 'w', encoding='utf-8') as working:
         fields = ['name', 'age', 'job']
         reader = csv.DictWriter(working, fields, delimiter=':')
