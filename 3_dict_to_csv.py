@@ -9,13 +9,39 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
+import csv
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+my_dict = [{'name': 'Aleks',
+            'age': 37,
+            'job': 'Sysadmin'},
+           {
+               'name': 'Olga',
+               'age': 33,
+               'job': 'buh'
+           },
+           {
+               'name': 'Artemii',
+               'age': 7,
+               'job': 'scool'
+           },
+           {
+               'name': 'Bob',
+               'age': 22,
+               'job': 'engineer'
+
+           }
+           ]
+
+
+def main() -> None:
+    with open('my_base.txt', 'w', encoding='utf-8') as working:
+        fields = ['name', 'age', 'job']
+        reader = csv.DictWriter(working, fields, delimiter=':')
+        reader.writeheader()
+
+        for i in my_dict:
+            reader.writerow(i)
+
 
 if __name__ == "__main__":
     main()

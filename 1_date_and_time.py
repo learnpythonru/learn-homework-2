@@ -8,20 +8,29 @@
 
 """
 
-def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+import datetime
 
 
-def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def print_days() -> None:
+    dt_now = datetime.date.today()
+    print(dt_now)
+
+    delta = datetime.timedelta(days=1)
+    print(delta)
+
+    yesterday = dt_now - delta
+    print(yesterday)
+
+    delta_30 = datetime.timedelta(days=30)
+    print(dt_now - delta_30)
+
+
+def str_2_datetime(date_string) -> datetime:
+    format = "%d/%m/%y %H:%M:%S.%f"
+    datetime_obj = datetime.datetime.strptime(date_string, format)
+
+    return datetime_obj
+
 
 if __name__ == "__main__":
     print_days()
