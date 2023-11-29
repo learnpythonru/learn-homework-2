@@ -33,14 +33,14 @@ my_dict = [{'name': 'Aleks',
            ]
 
 
-def main()->None:
+def main() -> None:
     with open('my_base.txt', 'w', encoding='utf-8') as working:
         fields = ['name', 'age', 'job']
         reader = csv.DictWriter(working, fields, delimiter=':')
         reader.writeheader()
+
         for i in my_dict:
             reader.writerow(i)
-
 
 
 if __name__ == "__main__":
