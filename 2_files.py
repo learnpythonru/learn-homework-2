@@ -18,7 +18,8 @@ def main():
         print(text)
         line_length = len(text)
         print(line_length)
-        word_count = text.count(' ')
+        words = text.split()
+        word_count = len(words)
         print(word_count)
         
         ln_2 = text.replace('.', '!')
