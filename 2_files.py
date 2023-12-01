@@ -19,7 +19,8 @@ def main():
         line_length = len(text)
         print(line_length)
         words = text.split()
-        print(words)
+        word_count = len(words)
+        print(word_count)
         ln_2 = text.replace('.', '!')
         print(ln_2)
     with open('referat2_2.txt', 'w', encoding='utf-8') as file:
