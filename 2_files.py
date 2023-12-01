@@ -18,24 +18,12 @@ def main():
         print(text)
         line_length = len(text)
         print(line_length)
-        word_count = text.count(' ')
-        print(word_count)
-        
+        words = text.split()
+        print(words)
         ln_2 = text.replace('.', '!')
         print(ln_2)
     with open('referat2_2.txt', 'w', encoding='utf-8') as file:
         file.write(ln_2)
-
-           
-
-    
-            
-        
-   
-            
-        
-    
-    
 
 
 if __name__ == "__main__":
